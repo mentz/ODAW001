@@ -1,80 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Links relacionados | HTML5</title>
-		<style>
-			body {
-				text-align: center;
-				width: 800px;
-				background-color: #ffffff;
-				margin: 16px auto 16px auto;
-			}
-			
-			main {
-				display: block;
-				box-shadow: 0px 0px 6px #888888;
-			}
+  <head>
+    <meta charset="utf-8" />
+    <title>Links relacionados | HTML5</title>
+    <style>
+      body {
+        text-align: center;
+        width: 800px;
+        background-color: #ffffff;
+        margin: 16px auto 16px auto;
+      }
 
-			header h1 {
-				display: inline;
-				margin-right: 120px;
-			}
+      div#content {
+        display: block;
+        box-shadow: 0px 0px 6px #888888;
+      }
 
-			header nav {
-				position: relative;
-				display: inline-block;
-			}
+      header h1 {
+        display: inline;
+        margin-right: 120px;
+      }
 
-			header nav span.sep {
-				position: relative;
-				top: 4px;
-				display: inline-block;
-				width: 1px;
-				height: 16px;
-				background: gray;
-			}
+      header nav {
+        position: relative;
+        display: inline-block;
+      }
 
-			article {
-				display: inline-block;
-				width: 46%;
-				margin: 1%;
-			}
+      header nav span.sep {
+        position: relative;
+        top: 4px;
+        display: inline-block;
+        width: 1px;
+        height: 16px;
+        background: gray;
+      }
 
-			article header {
-				font-family: Helvetica;
-				font-weight: bold;
-				font-size: 14pt;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<header>
-				<h1>HTML5 Showcase</h1>
-				<nav>
-					<a href="index.html">home</a>
-					<span class="sep"></span>
-					<a href="pag2.html">extra</a>
-				</nav>
-			</header>
-			<hr>
-			<article>
-				<header>
-					Esse é o título de um artigo
-				</header>
-				<section>
-					Aqui vem texto no elemento &lt;section&gt;
-				</section>
-			</article>
-			<article>
-				<header>
-					Esse é o título de um artigo
-				</header>
-				<section>
-					Aqui vem texto no elemento &lt;section&gt;
-				</section>
-			</article>
-		</main>
-	</body>
+      main {
+        display: contents;
+      }
+
+      article {
+        display: inline-block;
+        width: 46%;
+        margin: 1%;
+        min-height: 130px;
+        background-color: #00deef;
+      }
+
+      article header {
+        font-family: Helvetica;
+        font-weight: bold;
+        font-size: 14pt;
+        margin: 12px auto;
+      }
+
+      table {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1>HTML5 Showcase</h1>
+        <nav>
+          <a href="index.html">home</a>
+          <span class="sep"></span>
+          <a href="pag2.html">links relacionados</a>
+        </nav>
+      </header>
+      <hr />
+      <main>
+        <article>
+          <header>
+            <a href="http://www.blobsallad.se/">
+              Blobsallad
+            </a>
+          </header>
+          <section>
+            Esse website apresenta um demo HTML5 + JS no qual você pode
+            arrastar, dividir e unir <i>blobs</i> e controlar a gravidade.
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <a href="http://spielzeugz.de/html5/liquid-particles/">
+              Liquid Particles
+            </a>
+          </header>
+          <section>
+            Aqui vemos um exemplo de canvas HTML5 com JavaScript sendo usado
+            para criar uma simulação de gravidade ao redor do cursor.
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <a href="https://bestvpn.org/html5demos/canvas-grad/">
+              Interactive Gradient
+            </a>
+          </header>
+          <section>
+            Aqui vemos um exemplo de canvas HTML5 com JavaScript sendo usado
+            para criar uma simulação de gravidade ao redor do cursor.
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <a href="https://www.pixijs.com/">
+              PixiJS
+            </a>
+          </header>
+          <section>
+            PixiJS é um framework gráfico 2D para WebGL ou HTML5 Canvas.
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <a href="http://brm.io/matter-js/">
+              Matter.js
+            </a>
+          </header>
+          <section>
+            Matter.js é um motor de física e framework gráfico 2D JavaScript
+            <i>para a web</i>.
+          </section>
+        </article>
+      </main>
+    </div>
+  </body>
 </html>

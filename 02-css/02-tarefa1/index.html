@@ -5,9 +5,31 @@
     se você quiser salvar amostras diferentes de style sheets
     com nomes novos, mude o valor do href na tag de link
     para refletir a nova style sheet -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="amostra1.css" />
+    <link rel="stylesheet" type="text/css" href="amostra2.css" />
+    <link rel="stylesheet" type="text/css" href="meu_style.css" />
+
+    <script>
+      function disableCss() {
+        document.styleSheets[0].disabled = true;
+        document.styleSheets[1].disabled = true;
+        document.styleSheets[2].disabled = true;
+      }
+
+      function changeCss(index) {
+        disableCss();
+        document.styleSheets[index].disabled = false;
+      }
+
+      changeCss(0);
+    </script>
   </head>
   <body>
+    <div id="menubar" style="text-align: center; margin: 0 auto; width: 800px;">
+      <button onclick="changeCss(0)">amostra1.css</button>
+      <button onclick="changeCss(1)">amostra2.css</button>
+      <button onclick="changeCss(2)">meu_style.css</button>
+    </div>
     <!-- Abaixo se encontram os elementos necessários
     para serem vistos na folha de estilos amostra1.css.
     Na medida em que você for criando as suas próprias style sheets com
@@ -29,7 +51,7 @@
           Este é um item de lista que não acompanha um link.
         </li>
         <li>
-          Este é um item de lista com um link <a href="css_test.html">vazio</a>.
+          Este é um item de lista com um link <a href="index.html">vazio</a>.
         </li>
       </ul>
 
@@ -45,6 +67,13 @@ Aqui vai algum texto pré-formatado.
           <td>Uma célula de tabela</td>
         </tr>
       </table>
+
+      <p>
+        Este texto tem um <span class="highlight">trecho marcado</span> com a
+        classe highlight.
+      </p>
+
+      <p class="ufo">alien technology</p>
 
       <p class="last">E aqui está uma classe de parágrafo "last"</p>
     </main>

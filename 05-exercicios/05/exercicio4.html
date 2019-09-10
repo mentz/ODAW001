@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> Exercício 4 de JavaScript </title>
+    <h1> <center> Exercício 4 de JavaScript </center> </h1>
+</head>
+
+<body>
+    <hr width="50%">
+
+    <div>
+        <center>
+            <canvas id="myTriangle" width="500" height="500"></canvas>
+        </center>
+
+        <script>
+            var canvasElement = document.querySelector("#myTriangle");
+            var triangle = canvasElement.getContext("2d");
+
+            // outer triangle
+            triangle.beginPath();
+            triangle.moveTo(225, 25);
+            triangle.lineTo(5, 400);
+            triangle.lineTo(445, 400);
+            triangle.lineTo(225, 25);
+            triangle.closePath();
+
+            // the outline
+            triangle.lineWidth = 10;
+            triangle.strokeStyle = '#666666';
+            triangle.stroke();
+
+            // the fill color
+            triangle.fillStyle = "#FFCC00";
+            triangle.fill();
+
+
+
+            // inner triangle
+            triangle.beginPath();
+            triangle.moveTo(225, 395);
+            triangle.lineTo(127, 202);
+            triangle.lineTo(325, 203);
+            triangle.lineTo(225, 395);
+            triangle.closePath();
+
+            // the outline
+            triangle.lineWidth = 10;
+            triangle.strokeStyle = '#666666';
+            triangle.stroke();
+
+            // the fill color
+            triangle.fillStyle = "#FFFFFF";
+            triangle.fill();
+        </script>
+    </div>
+
+    <hr width="50%">
+    <div>
+        <center>
+            <canvas id="mySquare" width="500" height="500"></canvas>
+        </center>
+
+        <script>
+            var canvasElement = document.querySelector("#mySquare");
+            var square = canvasElement.getContext("2d");
+
+            // outer square
+            square.beginPath();
+            square.moveTo( 10,  10);
+            square.lineTo(490,  10);
+            square.lineTo(490, 490);
+            square.lineTo( 10, 490);
+            square.lineTo( 10,  10);
+            square.closePath();
+
+            // the outline
+            square.lineWidth = 10;
+            square.strokeStyle = '#666666';
+            square.stroke();
+
+            // the fill color
+            square.fillStyle = "#DD3333";
+            square.fill();
+
+            // inner square
+            square.beginPath();
+            square.moveTo(245,  12);
+            square.lineTo(488, 245);
+            square.lineTo(245, 488);
+            square.lineTo( 12, 245);
+            square.lineTo(245,  12);
+            square.closePath();
+
+            // the outline
+            square.lineWidth = 10;
+            square.strokeStyle = '#666666';
+            square.stroke();
+
+            // the fill color
+            square.fillStyle = "#FFFFFF";
+            square.fill();
+
+        </script>
+    </div>
+
+</body>
+</html>

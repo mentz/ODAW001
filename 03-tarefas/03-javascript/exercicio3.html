@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <h1> <center> Exercício 3 de Javascript </center> </h1>
+</head>
+
+
+
+<body>
+
+    <script language="JavaScript">
+    function Greetings(nome) {
+        var myDate = new Date();
+        var h = myDate.getHours();
+        var dia_da_semana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sabado']
+
+        if( h > 19 || h < 4 ){
+            alert ("Boa noite, " + nome + ", hoje é " + dia_da_semana[myDate.getDay()] +
+                    ", " + myDate.getDate() + " / " + (myDate.getMonth() + 1) + " / " + myDate.getFullYear());
+            return false;
+        }
+        else if (h > 4 && h < 12) {
+            alert ("Bom dia, " + nome + ", hoje é " + dia_da_semana[myDate.getDay()] +
+                    ", " + myDate.getDate() + " / " + (myDate.getMonth() + 1) + " / " + myDate.getFullYear());
+            return false;
+        }
+        else{
+            alert ("Boa tarde, " + nome + ", hoje é " + dia_da_semana[myDate.getDay()] +
+                    ", " + myDate.getDate() + " / " + (myDate.getMonth() + 1) + " / " + myDate.getFullYear());
+            return false;
+        }
+    }
+    </script>
+
+
+    <center>
+
+    <hr width="50%">
+    <form method="POST" name="Exercicio3" onSubmit="return Greetings(document.Exercicio3.campoNome.value)">
+        <p> Nome <input type=text size=20 maxlength=50 name="campoNome"> </p>
+
+        <input type=submit name="Bsub" value="Olá">
+
+    </form>
+    </center>
+
+</body>
+
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<h1> <center> Exercício 2 de Javascript </center> </h1>
+	</head>
+
+	<body>
+		<script>
+		function TestaVal(campoNome, campoCPF) {
+			if (campoNome.value == "" && campoCPF.value == "") {
+				alert ("Nome e CPF não preenchidos")
+				return false
+			}
+			else if (campoNome.value == "") {
+				alert ("Nome não preenchido")
+				return false
+			}
+			else if (campoCPF.value == "") {
+				alert ("CPF não preenchido")
+				return false
+			}
+			else {
+				alert ("Tudo Ok")
+				return true
+			}
+		}
+		</script>
+
+		<center>
+		<hr width="50%">
+		<form method="POST" name="Exercicio2" onSubmit="return TestaVal(document.Exercicio2.campoNome, document.Exercicio2.campoCPF)" action="#">
+			<p> Nome <input type=text size=20 maxlength=50 name="campoNome"> </p>
+			<p> CPF <input type=text size=20 maxlength=11 name="campoCPF"> </p>
+			<p> Endereço <input type=text size=50 maxlength=50 name="campoEndereco"> </p>
+			<p> Telefone <input type=text size=8 maxlength=8 name="campoTelefone"> </p>
+			<input type=submit name="Bsub" value="Manda p/ Server">
+		</form>
+		</center>
+	</body>
+</html>

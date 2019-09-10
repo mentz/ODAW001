@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <h1> <center> Exercício 1 de Javascript </center> </h1>
+</head>
+
+
+
+<body>
+
+    <hr width="50%">
+    <div>
+    <center>
+        <script>
+        function tudoParaMinusculo () {
+            document.Mudar.campo1.value = document.Mudar.campo1.value.toLowerCase()
+            document.Mudar.campo2.value = document.Mudar.campo2.value.toLowerCase()
+            document.Mudar.campo3.value = document.Mudar.campo3.value.toLowerCase()
+
+        }
+
+        function tudoParaMaiusculo () {
+            document.Mudar.campo1.value = document.Mudar.campo1.value.toUpperCase()
+            document.Mudar.campo2.value = document.Mudar.campo2.value.toUpperCase()
+            document.Mudar.campo3.value = document.Mudar.campo3.value.toUpperCase()
+        }
+        </script>
+
+        <h2> Um botão para os 3 campos </h2>
+        <form name="Mudar">
+        <p> Campo 1 <input type=text size=20 maxlength=20 name="campo1"> </p>
+        <p> Campo 2 <input type=text size=20 maxlength=20 name="campo2"> </p>
+        <p> Campo 3 <input type=text size=20 maxlength=20 name="campo3"> </p>
+
+        <p>
+            minusculo <input type=checkbox name="Opt1a" value="1" checked
+                            onclick="if (this.checked)
+                               {   tudoParaMinusculo()
+                                   document.Mudar.Opt1b.checked = false
+                                } ">
+            MAIUSCULO <input type=checkbox name="Opt1b" value="2"
+                            onclick="if (this.checked)
+                               {   tudoParaMaiusculo()
+                                   document.Mudar.Opt1a.checked = false
+                                } ">
+         </p>
+
+        </form>
+    </center>
+    </div>
+
+
+    <hr width="50%">
+    <div>
+    <center>
+        <script>
+        function mudaParaMinusculo (campo) {
+            campo.value = campo.value.toLowerCase()
+
+        }
+
+        function mudaParaMaiusculo (campo) {
+            campo.value = campo.value.toUpperCase()
+        }
+        </script>
+
+        <h2> Um botão para cada campo </h2>
+        <form name="Exercicio">
+        <p> Campo 1 <input type=text size=20 maxlength=20 name="Campo1"> </p>
+
+        <p>
+            minusculo <input type=checkbox name="Opt2a" value="1" checked
+                            onclick="if (this.checked)
+                               {   mudaParaMinusculo( document.Exercicio.Campo1 )
+                                   document.Exercicio.Opt2b.checked = false
+                                } ">
+            MAIUSCULO <input type=checkbox name="Opt2b" value="2"
+                            onclick="if (this.checked)
+                               {   mudaParaMaiusculo( document.Exercicio.Campo1 )
+                                   document.Exercicio.Opt2a.checked = false
+                                } ">
+         </p>
+
+
+         <p> Campo 2 <input type=text size=20 maxlength=20 name="Campo2"> </p>
+         <p>
+             minusculo <input type=checkbox name="Opt3a" value="1" checked
+                             onclick="if (this.checked)
+                                {   mudaParaMinusculo( document.Exercicio.Campo2 )
+                                    document.Exercicio.Opt3b.checked = false
+                                 } ">
+             MAIUSCULO <input type=checkbox name="Opt3b" value="2"
+                             onclick="if (this.checked)
+                                {   mudaParaMaiusculo( document.Exercicio.Campo2 )
+                                    document.Exercicio.Opt3a.checked = false
+                                 } ">
+          </p>
+
+         <p> Campo 3 <input type=text size=20 maxlength=20 name="Campo3"> </p>
+         <p>
+             minusculo <input type=checkbox name="Opt4a" value="1" checked
+                             onclick="if (this.checked)
+                                {   mudaParaMinusculo( document.Exercicio.Campo3 )
+                                    document.Exercicio.Opt4b.checked = false
+                                 } ">
+             MAIUSCULO <input type=checkbox name="Opt4b" value="2"
+                             onclick="if (this.checked)
+                                {   mudaParaMaiusculo( document.Exercicio.Campo3 )
+                                    document.Exercicio.Opt4a.checked = false
+                                 } ">
+          </p>
+
+        </form>
+    </center>
+    </div>
+
+
+
+</body>
+
+
+</html>

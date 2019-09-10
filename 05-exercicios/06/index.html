@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<style>
+			body {
+				text-align: center;
+			}
+
+			#b_tabela {
+				margin: auto;
+			}
+
+			#b_tabela, #b_tabela th, #b_tabela td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+<body>
+	<h1> Lista de Exercícios de Javascript </h1>
+	<hr width="50%">
+	<!-- ======================================================== -->
+	
+	
+	<h2> a) Validar CPF e Data </h2>
+
+	
+
+
+
+	<hr width="50%">
+	<!-- -------------------------------------------------------- -->
+	<h2> b) Funções Matemáticas </h2>
+
+	<table id="b_tabela"></table>
+	<script>
+		function fat(i){
+			let s = 1;
+			for (let k = 1; k <= i; k++) {
+				s *= k;
+			}
+			return s;
+		}
+
+		document.getElementById("b_tabela").innerHTML += "<tr><th>N</th><th>^2</th><th>^3</th><th>!</th></tr>";
+		for(let i = 0; i < 11; i++) {
+			document.getElementById("b_tabela").innerHTML += ("<tr><td>" + i + "</td><td>" + i*i + "</td><td>" + i*i*i + "</td><td>" + fat(i) + "</td></tr>");
+		}
+	</script>
+	<hr width="50%">
+	<!-- -------------------------------------------------------- -->
+	<h2> c) Frase qualquer </h2>
+
+	<script>
+		function repete_frase(frase){
+			document.getElementById("c_repetefrase").innerHTML = "";
+			for(let i = 1; i < 7; i++){
+				document.getElementById("c_repetefrase").innerHTML += ("<h" + i + ">" + frase + "</h" + i + ">");
+			}
+		}
+
+		function rodar_o_c() {
+			let frase = prompt("Escreva uma frase qualquer.");
+			repete_frase(frase);
+		}
+	</script>
+
+	<div id="c_repetefrase"></div>
+	<button onclick="rodar_o_c()">Gerar o c) com uma nova frase</button>
+
+	<hr width="50%">
+	<!-- -------------------------------------------------------- -->
+	<h2> d) Arte. Tema livre </h2>
+
+	<script>
+		var letrinhas = [];
+		function d_escreve_frase(){
+			let doc = document.getElementById("d_suafrase");
+			doc.innerHTML = "";
+			let frase = prompt("Escolhe uma frase boa ;)");
+			for (let i = 0; i < frase.length; i++) {
+				doc.innerHTML += "<span id=''>" + frase[i] + "</span>";
+			}
+		}
+	</script>
+
+	<div id="d_suafrase"></div>
+	<button onclick="d_escreve_frase()">Escolher a frase</button>
+	<button onclick="d_ordena_frase()">Ordenar &gt;:D</button>
+
+</body>
+</html>

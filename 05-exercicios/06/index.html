@@ -39,6 +39,71 @@
 
     <h2>a) Validar CPF e Data</h2>
 
+    <label>CPF: <input type="tel" maxlength="11" onchange="a_validar_cpf(this.value)"/></label></br>
+    <label>Data: <input type="text" maxlength="10" placeholder="dd/mm/yyyy" onchange="a_validar_data(this.value)"/></label>
+
+    <script>
+      function a_cpf_valido(strCPF) {
+        var Soma;
+        var Resto;
+        Soma = 0;
+        if (strCPF == "00000000000") return false;
+          
+        for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+        Resto = (Soma * 10) % 11;
+        
+        if ((Resto == 10) || (Resto == 11))  Resto = 0;
+        if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
+        
+        Soma = 0;
+        for (i = 1; i <= 10; i++) {
+          Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+        }
+        Resto = (Soma * 10) % 11;
+      
+        if ((Resto == 10) || (Resto == 11))  Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
+        return true;
+      }
+
+      function a_validar_cpf(cpf) {
+        if (a_cpf_valido(cpf)) {
+          alert("CPF é válido! :D");
+        } else {
+          alert("CPF inválido! :(");
+        }
+      }
+
+      function a_data_valido(strDATA) {
+        if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(strDATA))
+          return false;
+
+        var partes = strDATA.split("/");
+        var dia = parseInt(partes[0], 10);
+        var mes = parseInt(partes[1], 10);
+        var ano = parseInt(partes[2], 10);
+
+        if(ano < 1000 || ano > 3000 || mes == 0 || mes > 12)
+          return false;
+
+        var dias_no_mes = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+        if(ano % 400 == 0 || (ano % 100 != 0 && ano % 4 == 0))
+          dias_no_mes[1] = 29;
+
+        return dia > 0 && dia <= dias_no_mes[mes - 1];
+      }
+
+      function a_validar_data(data) {
+        if (a_data_valido(data)) {
+          alert("Data é válida! :D");
+        } else {
+          alert("Data inválida! :(");
+        }
+      }
+
+    </script>
+
     <hr width="50%" />
     <!-- -------------------------------------------------------- -->
     <h2>b) Funções Matemáticas</h2>
@@ -231,5 +296,28 @@
         }
       }
     </script>
+    <hr width="50%" />
+    <!-- -------------------------------------------------------- -->
+    <h2>e) Somar dois números</h2>
+    <button onclick="e_iniciar()">Somar dois números</button>
+    <script>
+      function e_somar(a, b) {
+        return a + b;
+      }
+
+      function e_avisar(a, b) {
+        alert("A soma dos números " + a + " e " + b + " é " + e_somar(a, b) + "! :D");
+      }
+
+      function e_iniciar() {
+        try {
+          e_avisar(parseInt(prompt("Digite o primeiro número")), parseInt(prompt("Digite o segundo número :D")));
+        }
+        catch (ex) {
+          alert("Desculpe, mas acho que a entrada não era um número de verdade :/");
+        }
+      }
+    </script>
+
   </body>
 </html>

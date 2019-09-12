@@ -1,91 +1,235 @@
 <html>
-	<head>
-		<style>
-			body {
-				text-align: center;
-			}
+  <head>
+    <style>
+      body {
+        text-align: center;
+      }
 
-			#b_tabela {
-				margin: auto;
-			}
+      #b_tabela {
+        margin: auto;
+      }
 
-			#b_tabela, #b_tabela th, #b_tabela td {
-				border: 1px solid black;
-				border-collapse: collapse;
-			}
-		</style>
-	</head>
-<body>
-	<h1> Lista de Exercícios de Javascript </h1>
-	<hr width="50%">
-	<!-- ======================================================== -->
-	
-	
-	<h2> a) Validar CPF e Data </h2>
+      #b_tabela,
+      #b_tabela th,
+      #b_tabela td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
 
-	
+      #d_suafrase {
+        font-family: Consolas;
+        font-size: 20pt;
+        font-weight: bolder;
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
 
+      #d_velocidade {
+        position: relative;
+        top: 5px;
+        direction: rtl;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lista de Exercícios de Javascript</h1>
+    <hr width="50%" />
+    <!-- ======================================================== -->
 
+    <h2>a) Validar CPF e Data</h2>
 
-	<hr width="50%">
-	<!-- -------------------------------------------------------- -->
-	<h2> b) Funções Matemáticas </h2>
+    <hr width="50%" />
+    <!-- -------------------------------------------------------- -->
+    <h2>b) Funções Matemáticas</h2>
 
-	<table id="b_tabela"></table>
-	<script>
-		function fat(i){
-			let s = 1;
-			for (let k = 1; k <= i; k++) {
-				s *= k;
-			}
-			return s;
-		}
+    <table id="b_tabela"></table>
+    <script>
+      function fat(i) {
+        let s = 1;
+        for (let k = 1; k <= i; k++) {
+          s *= k;
+        }
+        return s;
+      }
 
-		document.getElementById("b_tabela").innerHTML += "<tr><th>N</th><th>^2</th><th>^3</th><th>!</th></tr>";
-		for(let i = 0; i < 11; i++) {
-			document.getElementById("b_tabela").innerHTML += ("<tr><td>" + i + "</td><td>" + i*i + "</td><td>" + i*i*i + "</td><td>" + fat(i) + "</td></tr>");
-		}
-	</script>
-	<hr width="50%">
-	<!-- -------------------------------------------------------- -->
-	<h2> c) Frase qualquer </h2>
+      document.getElementById("b_tabela").innerHTML +=
+        "<tr><th>N</th><th>^2</th><th>^3</th><th>!</th></tr>";
+      for (let i = 0; i < 11; i++) {
+        document.getElementById("b_tabela").innerHTML +=
+          "<tr><td>" +
+          i +
+          "</td><td>" +
+          i * i +
+          "</td><td>" +
+          i * i * i +
+          "</td><td>" +
+          fat(i) +
+          "</td></tr>";
+      }
+    </script>
+    <hr width="50%" />
+    <!-- -------------------------------------------------------- -->
+    <h2>c) Frase qualquer</h2>
 
-	<script>
-		function repete_frase(frase){
-			document.getElementById("c_repetefrase").innerHTML = "";
-			for(let i = 1; i < 7; i++){
-				document.getElementById("c_repetefrase").innerHTML += ("<h" + i + ">" + frase + "</h" + i + ">");
-			}
-		}
+    <script>
+      function repete_frase(frase) {
+        document.getElementById("c_repetefrase").innerHTML = "";
+        for (let i = 1; i < 7; i++) {
+          document.getElementById("c_repetefrase").innerHTML +=
+            "<h" + i + ">" + frase + "</h" + i + ">";
+        }
+      }
 
-		function rodar_o_c() {
-			let frase = prompt("Escreva uma frase qualquer.");
-			repete_frase(frase);
-		}
-	</script>
+      function rodar_o_c() {
+        let frase = prompt("Escreva uma frase qualquer.");
+        repete_frase(frase);
+      }
+    </script>
 
-	<div id="c_repetefrase"></div>
-	<button onclick="rodar_o_c()">Gerar o c) com uma nova frase</button>
+    <div id="c_repetefrase"></div>
+    <button onclick="rodar_o_c()">Gerar o c) com uma nova frase</button>
 
-	<hr width="50%">
-	<!-- -------------------------------------------------------- -->
-	<h2> d) Arte. Tema livre </h2>
+    <hr width="50%" />
+    <!-- -------------------------------------------------------- -->
+    <h2>d) Oi turma, hoje é aula de artes. Tema livre.</h2>
 
-	<script>
-		var letrinhas = [];
-		function d_escreve_frase(){
-			let doc = document.getElementById("d_suafrase");
-			doc.innerHTML = "";
-			let frase = prompt("Escolhe uma frase boa ;)");
-			for (let i = 0; i < frase.length; i++) {
-				doc.innerHTML += "<span id=''>" + frase[i] + "</span>";
-			}
-		}
-	</script>
+    <div id="d_suafrase"></div>
+    <button onclick="d_nova_frase()">Escolher a frase</button>
+    <button onclick="d_ordena_frase()">Ordenar &gt;:D</button>
+    <br />
+    <label>
+      Velocidade:
+    </label>
+    <input
+      name="d_velocidade"
+      type="radio"
+      value="1000"
+      title="Lento"
+      checked="checked"
+      onclick="d_atualiza_velocidade(this.value)"
+    />
+    Lento
+    <input
+      name="d_velocidade"
+      type="radio"
+      value="50"
+      title="Rápido"
+      onclick="d_atualiza_velocidade(this.value)"
+    />
+    Rápido
+    <input
+      name="d_velocidade"
+      type="radio"
+      value="1"
+      title="Maratona"
+      onclick="d_atualiza_velocidade(this.value)"
+    />
+    Maratona
+    <br />
+    <input
+      name="d_velocidade"
+      type="radio"
+      value="0"
+      title="Insano"
+      onclick="d_atualiza_velocidade(this.value)"
+    />
+    Moço, só ordena por favor.
 
-	<div id="d_suafrase"></div>
-	<button onclick="d_escreve_frase()">Escolher a frase</button>
-	<button onclick="d_ordena_frase()">Ordenar &gt;:D</button>
+    <script>
+      var letrinhas = [];
+      var delay = 1000;
 
-</body>
+      const sleep = ms => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      };
+
+      function d_atualiza_velocidade(valor) {
+        delay = valor;
+      }
+
+      function d_nova_frase() {
+        var frase = prompt("Escolhe uma frase boa ;)");
+        letrinhas = [];
+        for (var i = 0; i < frase.length; i++) {
+          letrinhas.push(frase[i]);
+        }
+
+        var doc = document.getElementById("d_suafrase");
+        doc.innerHTML = "";
+        for (var i = 0; i < letrinhas.length; i++) {
+          doc.innerHTML += "<span>" + letrinhas[i] + "</span>";
+        }
+      }
+
+      async function d_ordena_frase() {
+        var vet = letrinhas;
+        var n = letrinhas.length;
+        var doc = document.getElementById("d_suafrase");
+
+        // Bubble Sort
+        // for (var i = 0; i < n; i++) {
+        //   for (var j = 0; j < n - i - 1; j++) {
+        //     doc.children[j].style.backgroundColor = "gray";
+        //     doc.children[j + 1].style.backgroundColor = "gray";
+        //     if (vet[j] > vet[j + 1]) {
+        //       doc.children[j].style.backgroundColor = "orange";
+        //       doc.children[j + 1].style.backgroundColor = "orange";
+
+        //       var c = vet[j];
+        //       vet[j] = vet[j + 1];
+        //       vet[j + 1] = c;
+
+        //       if (delay > 0) await sleep(delay);
+        //       else await sleep(0);
+
+        //       doc.children[j].innerHTML = vet[j];
+        //       doc.children[j + 1].innerHTML = vet[j + 1];
+
+        //       letrinhas = vet;
+        //     }
+        //     if (delay > 0) await sleep(delay);
+        //     else await sleep(0);
+
+        //     doc.children[j].style.backgroundColor = "transparent";
+        //     doc.children[j + 1].style.backgroundColor = "transparent";
+        //   }
+        //   doc.children[j].style.color = "green";
+        // }
+
+        // Insertion Sort
+        for (var i = 0; i < n; i++) {
+          doc.children[i].style.backgroundColor = "gray";
+          let menor = n - 1;
+          for (var j = n - 1; j >= i; j--) {
+            doc.children[j].style.border = "2px solid gray";
+
+            if (vet[j] < vet[menor]) {
+              menor = j;
+            }
+
+            doc.children[menor].style.backgroundColor = "green";
+
+            if (delay > 0) await sleep(delay);
+            // else await sleep(0);
+
+            doc.children[j].style.border = "none";
+            doc.children[menor].style.backgroundColor = "transparent";
+          }
+
+          doc.children[i].innerHTML = vet[menor];
+          doc.children[menor].innerHTML = vet[i];
+
+          let c = vet[menor];
+          vet[menor] = vet[i];
+          vet[i] = c;
+
+          letrinhas = vet;
+
+          doc.children[i].style.color = "green";
+          doc.children[i].style.backgroundColor = "transparent";
+        }
+      }
+    </script>
+  </body>
 </html>

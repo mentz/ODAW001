@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <style>
+      body {
+        text-align: center;
+      }
+
+      #b_tabela {
+        margin: auto;
+      }
+
+      #b_tabela,
+      #b_tabela th,
+      #b_tabela td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      #d_suafrase {
+        font-family: Consolas;
+        font-size: 20pt;
+        font-weight: bolder;
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
+
+      #d_velocidade {
+        position: relative;
+        top: 5px;
+        direction: rtl;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lista de Exercícios de Javascript</h1>
+    <hr width="50%" />
+    <!-- ======================================================== -->
+
+    <h2>1) Jogo de adivinhação</h2>
+
+    Regras: Adivinhe o número. Entre 0 e 100, inclusive.
+
+    <div id="game"></div>
+    <button id="game_comecar" onclick="comecar_game()">Começar Game</button>
+
+    <script>
+      var numero = 0;
+      var game_window;
+
+      // Começar o jogo
+      function comecar_game() {
+        numero = parseInt(Math.round(Math.random(0) * 100));
+        game_window = document.getElementById("game");
+        document.getElementById("game_comecar").disabled = true;
+
+        game_window.innerHTML =
+          '<input type="tel" maxlength="3" length="3" placeholder="escreva aqui seu palpite" onchange="game_checar(this)" />';
+      }
+
+      function game_checar(entrada) {
+        let palpite = entrada.value;
+        entrada.disabled = true;
+        entrada.placeholder = palpite;
+        if (palpite < numero) {
+          game_window.innerHTML +=
+            "Desculpe, seu palpite foi muito baixo<br />" +
+            '<input type="tel" maxlength="3" length="3" placeholder="escreva aqui seu novo palpite" onchange="game_checar(this)" />';
+        } else if (palpite > numero) {
+          game_window.innerHTML +=
+            "Desculpe, seu palpite foi muito alto :x<br />" +
+            '<input type="tel" maxlength="3" length="3" placeholder="escreva aqui seu novo palpite" onchange="game_checar(this)" />';
+        } else {
+          game_window.innerHTML =
+            "<h3>Parabéns! Você acertou o número! (era " + numero + ")</h3>";
+          document.getElementById("game_comecar").disabled = false;
+        }
+      }
+    </script>
+
+    <hr width="50%" />
+    <!-- ======================================================== -->
+
+    <h2>2) (in)Sanitização de strings</h2>
+    <p>
+      Escreva uma string na textarea abaixo e pressione o botão para "limpar" a
+      entrada.
+    </p>
+
+    <textarea id="insanitizacao" cols="80" rows="10" wrap="hard"></textarea>
+    <br />
+    <button onclick="insanitizar()">(in)Sanitizar o texto</button>
+
+    <script>
+      var insanizado = "";
+
+      function insanitizar() {
+        insanizado = "";
+        let texto = document.getElementById("insanitizacao").value;
+
+        for (let i = 0; i < texto.length; i++) {
+          if (!insanizado.includes(texto[i])) insanizado += texto[i];
+        }
+
+        document.getElementById("insanitizacao").value = insanizado;
+      }
+    </script>
+
+    <hr width="50%" />
+    <!-- ======================================================== -->
+
+    <h2>3) Verificador de senhas</h2>
+
+    <input
+      id="senhas"
+      type="text"
+      placeholder="Digite aqui sua senha"
+      onchange="checar_senha()"
+    />
+    <button onchange="checar_senha()">Validar</button>
+
+    <script>
+      function checar_senha() {
+        let campo = document.getElementById("senhas");
+        let minha_senha = campo.value;
+
+        if (
+          /[a-z]/.test(minha_senha) &&
+          /[A-Z]/.test(minha_senha) &&
+          /[0-9]/.test(minha_senha) &&
+          /[!-\/:-?]/.test(minha_senha) &&
+          /.......*/.test(minha_senha)
+        ) {
+          campo.style.boxShadow = "0px 0px 4px 8px green";
+        } else {
+          campo.style.boxShadow = "0px 0px 4px 8px red";
+        }
+      }
+    </script>
+  </body>
+</html>

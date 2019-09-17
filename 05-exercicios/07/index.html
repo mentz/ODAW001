@@ -49,6 +49,8 @@
     <script>
       var numero = 0;
       var game_window;
+      const novo_palpite =
+        '<input type="tel" style="margin-right: 0.2rem;" maxlength="3" size="2" placeholder="palpite" onchange="game_checar(this)" />';
 
       // Começar o jogo
       function comecar_game() {
@@ -56,8 +58,7 @@
         game_window = document.getElementById("game");
         document.getElementById("game_comecar").disabled = true;
 
-        game_window.innerHTML =
-          '<input type="tel" maxlength="3" length="3" placeholder="escreva aqui seu palpite" onchange="game_checar(this)" />';
+        game_window.innerHTML = novo_palpite;
       }
 
       function game_checar(entrada) {
@@ -66,12 +67,10 @@
         entrada.placeholder = palpite;
         if (palpite < numero) {
           game_window.innerHTML +=
-            "Desculpe, seu palpite foi muito baixo<br />" +
-            '<input type="tel" maxlength="3" length="3" placeholder="escreva aqui seu novo palpite" onchange="game_checar(this)" />';
+            "Desculpe, seu palpite foi muito baixo<br />" + novo_palpite;
         } else if (palpite > numero) {
           game_window.innerHTML +=
-            "Desculpe, seu palpite foi muito alto :x<br />" +
-            '<input type="tel" maxlength="3" length="3" placeholder="escreva aqui seu novo palpite" onchange="game_checar(this)" />';
+            "Desculpe, seu palpite foi muito alto :x<br />" + novo_palpite;
         } else {
           game_window.innerHTML =
             "<h3>Parabéns! Você acertou o número! (era " + numero + ")</h3>";
@@ -136,6 +135,59 @@
           campo.style.boxShadow = "0px 0px 4px 8px green";
         } else {
           campo.style.boxShadow = "0px 0px 4px 8px red";
+        }
+      }
+    </script>
+
+    <hr width="50%" />
+    <!-- ======================================================== -->
+
+    <h2>5) Ordenação de números</h2>
+    Insira números e veja eles serem ordenados em tempo real (após clicar no
+    botão Ordenar).
+    <br />
+
+    <span id="e_container"></span>
+    <br />
+    <input
+      id="e_novo_numero"
+      type="number"
+      size="2"
+      placeholder="Digita o número e 'enter'"
+      onchange="e_inserir_numero()"
+    />
+    <br />
+    <button onclick="e_ordenar()">Ordenar</button>
+
+    <script>
+      function e_inserir_numero() {
+        let input_novo_num = document.getElementById("e_novo_numero");
+        let novo_num = parseInt(input_novo_num.value);
+        input_novo_num.value = "";
+
+        document.getElementById("e_container").innerHTML +=
+          " <span style='font-size: 4; background-color: orange'>" +
+          novo_num +
+          "</span>";
+      }
+
+      function e_ordenar() {
+        let dom = document.getElementById("e_container");
+        for (let i = 0; i < dom.children.length; i++) {
+          dom.children[i].style.backgroundColor = "transparent";
+        }
+        let arr = Array.from(dom.children);
+        arr.sort((a, b) => {
+          return parseInt(a.innerText) - parseInt(b.innerText);
+        });
+
+        while (dom.hasChildNodes()) {
+          dom.removeChild(dom.childNodes[0]);
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+          dom.append(arr[i]);
+          dom.append(" ");
         }
       }
     </script>

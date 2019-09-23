@@ -1,0 +1,8 @@
+arthur@email.com $2y$10$munppTeX6wFJJgrxpxVwdOxE31ixFJLiqOuzIvKGChqrxYUm38jSG
+felipe@email.com $2y$10$fzfYVUr5t.SiCnBYusTvPOl2sThCVItPbx.0Cgow2wVfLDO27AOAW
+omar@email.com $2y$10$qOCSAm/HvChMscXkDwuj4OwLnG3dzUYdMi530c1IJOCpm/E0aduP2
+ar@email.com $2y$10$WCaPTwjz0smHK40Cq6GKWe1zS8fjJxZzTUAy9GAKfiROs9P9ToCBe
+cu@email.com $2y$10$XB6zumFEvWL0ViRtBsEqNuq.qxP6UkAL2ij52vAGmd4CxtvA0RYDC
+mano@email.com $2y$10$YNEz477n38VZ5MKku5w4OOVtLGRwwz03Z8DwkkJvvwCmErHRappoq
+aaaa@email.com $2y$10$PUcQE6YIcUprB/xojKnJueIz99vhNHNzgQ04.4CwvJol.BMFAw65K
+lucaslittermentz@gmail.com $2y$10$Xbsom0kglxq0f52V1xv6xuhUD0Ac09pkfvVuwqUfWc8B8PiVGcrVO

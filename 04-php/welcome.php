@@ -18,7 +18,12 @@
 
     function valida_senha($senha)
     {
-        return preg_match("/^(?=[a-z])(?=[A-Z])(?=[0-9])(?=[!-\/:-?])(?=.{6,})/", $senha);
+        $regras = ["/[a-z]/", "/[A-Z]/", "/[0-9]/", "/[!-\/:-?]/", "/.{6,}/"];
+        $certo = true;
+        foreach ($regras as $regra) {
+            $certo &= preg_match($regra, $senha);
+        }
+        return $certo;
     }
 
     function validate_post($args)
@@ -29,9 +34,11 @@
             array_key_exists("senha", $args) &&
             array_key_exists("gender", $args) &&
             array_key_exists("bio", $args) &&
-            array_key_exists("termos", $args)
+            array_key_exists("termos", $args) &&
+            valida_email($args["email"]) &&
+            valida_senha($args["senha"])
         ) {
-            return valida_email($args["email"]) && valida_senha($args["senha"]);
+            return true;
         }
         return false;
     }
@@ -52,8 +59,11 @@
         }
     } else {
         print('<div id="failure"><h2>Falhou!</h2><h3><a href="cadastro.html">Tente novamente, dessa vez preenchendo todos os campos.</a></h3>');
-        if (array_key_exists("email", $_POST) && !filter_var($args["email"], FILTER_VALIDATE_EMAIL)) {
-            print('<h1>e lembra que o e-mail tem que ser válido</h1>');
+        if (array_key_exists("email", $_POST) && !valida_email($_POST["email"])) {
+            print('<p>O e-mail não é válido.</p>');
+        }
+        if (array_key_exists("senha", $_POST) && !valida_senha($_POST["senha"])) {
+            print('<p>A senha é muito fraca.</p>');
         }
     }
     print('</div>');

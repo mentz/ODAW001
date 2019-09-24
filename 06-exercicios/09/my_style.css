@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+}
+
+form {
+  margin: 10px auto;
+
+  padding: 10px;
+  color: #ffffff;
+  background-color: #222222;
+
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  width: 600px;
+}
+
+div#success {
+  margin: 10px auto;
+
+  padding: 10px;
+  color: #000000;
+  background-color: #00ff00;
+
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  width: 600px;
+}
+
+div#failure {
+  margin: 10px auto;
+
+  padding: 10px;
+  color: #ffffff;
+  background-color: #ff0000;
+
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  width: 600px;
+}
+
+table {
+  margin: 0 auto;
+}

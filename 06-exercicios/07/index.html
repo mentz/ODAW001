@@ -129,7 +129,7 @@
           /[a-z]/.test(minha_senha) &&
           /[A-Z]/.test(minha_senha) &&
           /[0-9]/.test(minha_senha) &&
-          /[!-\/:-?]/.test(minha_senha) &&
+          /[!-\/:-@\[-\`\{-~]/.test(minha_senha) &&
           /.......*/.test(minha_senha)
         ) {
           campo.style.boxShadow = "0px 0px 4px 8px green";

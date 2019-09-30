@@ -1,0 +1,16 @@
+<!-- views/layout.etlua -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= page_title or "Teste com Lua" %></title>
+  <style>
+    body {
+      text-align: center;
+	}
+  </style>
+</head>
+<body>
+  <% content_for("inner") %>
+</body>
+</html>

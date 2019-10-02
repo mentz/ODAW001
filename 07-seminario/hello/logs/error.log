@@ -1,0 +1,3 @@
+2019/10/01 20:54:42 [alert] 6716#0: lua_code_cache is off; this will hurt performance in /home/lucas/Documents/UDESC/ODAW001/github/07-seminario/hello/nginx.conf.compiled:16
+2019/10/01 21:05:40 [alert] 9234#0: lua_code_cache is off; this will hurt performance in /home/lucas/Documents/UDESC/ODAW001/github/07-seminario/hello/nginx.conf.compiled:16
+2019/10/01 21:41:23 [alert] 13400#0: lua_code_cache is off; this will hurt performance in /home/lucas/Documents/UDESC/ODAW001/github/07-seminario/hello/nginx.conf.compiled:16

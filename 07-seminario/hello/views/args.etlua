@@ -1,0 +1,7 @@
+<!-- views/index.html -->
+<h1>Teste de Argumentos</h1>
+<% if table.getn(arguments) == 0 then %>
+<p>Nenhum argumento informado</p>
+<% elseif table.getn(arguments) == 1 then %>
+<p>O argumento informado é:</p>
+<%= arguments[1] %>

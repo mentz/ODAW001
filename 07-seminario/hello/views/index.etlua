@@ -1,3 +1,10 @@
 <!-- views/index.html -->
 <h1>Olá Mundo!</h1>
 <p>Usando Lapis <%= require("lapis.version") %></p>
+<br />
+<p>Coisas que eu gosto:</p>
+<ol>
+	<% for i, coisa in pairs(coisas_que_gosto) do %>
+	<li><%= coisa %></li>
+	<% end %>
+</ol>

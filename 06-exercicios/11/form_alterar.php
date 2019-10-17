@@ -19,26 +19,26 @@
       <tr>
         <td>Nome:</td>
         <?php
-        echo '<td><input type="text" name="nome" value="' . $_POST['cpf'] .'"/></td>';
-        ?> 
+        echo '<td><input type="text" name="nome" value="' . $_POST['cpf'] . '"/></td>';
+        ?>
       </tr>
       <tr>
         <td>E-mail:</td>
         <?php
-        echo '<td><input type="text" name="email" value="' . $_POST['cpf'] .'"/></td>';
-        ?> 
+        echo '<td><input type="text" name="email" value="' . $_POST['cpf'] . '"/></td>';
+        ?>
       </tr>
       <tr>
         <td>Telefone:</td>
         <?php
-        echo '<td><input type="tel" name="telefone" value="' . $_POST['cpf'] .'"/></td>';
-        ?> 
+        echo '<td><input type="tel" name="telefone" value="' . $_POST['cpf'] . '"/></td>';
+        ?>
       </tr>
       <tr>
         <td>CPF:</td>
         <?php
-        echo '<td><input type="tel" name="cpf" value="' . $_POST['cpf'] .'"/></td>';
-        ?>        
+        echo '<td><input type="tel" name="cpf" value="' . $_POST['cpf'] . '"/></td>';
+        ?>
       </tr>
       <tr>
         <td>Estado natal:</td>
@@ -82,25 +82,25 @@
       <tr>
         <td>Sexo:</td>
         <td>
-        <?php
-        if($pessoa['genero'] == 'f'){
-          echo '<input type="radio" name="genero" value="f" checked/> Feminino';
-        } else {
-          echo '<input type="radio" name="genero" value="f"/> Feminino'
-        }
+          <?php
+          if ($pessoa['genero'] == 'f') {
+            echo '<input type="radio" name="genero" value="f" checked/> Feminino';
+          } else {
+            echo '<input type="radio" name="genero" value="f"/> Feminino';
+          }
 
-        if($pessoa['genero'] == 'm'){
-          echo '<input type="radio" name="genero" value="m" checked/> Masculino'
-        } else {
-          echo '<input type="radio" name="genero" value="m"/> Masculino'
-        }        
+          if ($pessoa['genero'] == 'm') {
+            echo '<input type="radio" name="genero" value="m" checked/> Masculino';
+          } else {
+            echo '<input type="radio" name="genero" value="m"/> Masculino';
+          }
 
-        if($pessoa['genero'] == 'o'){
-          echo '<input type="radio" name="genero" value="o" checked/> Outro'
-        } else {
-          echo '<input type="radio" name="genero" value="o"/> Outro'
-        }
-        ?>
+          if ($pessoa['genero'] == 'o') {
+            echo '<input type="radio" name="genero" value="o" checked/> Outro';
+          } else {
+            echo '<input type="radio" name="genero" value="o"/> Outro';
+          }
+          ?>
         </td>
       </tr>
       <tr>

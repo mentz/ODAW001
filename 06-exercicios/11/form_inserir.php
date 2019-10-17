@@ -94,8 +94,9 @@
       <tr>
         <td>Sexo:</td>
         <td>
-          <input type="radio" name="genero" value="f" /> Feminino
-          <input type="radio" name="genero" value="m" /> Masculino
+          <input type="radio" name="sexo" value="f" /> Feminino
+          <input type="radio" name="sexo" value="m" /> Masculino
+          <input type="radio" name="sexo" value="o" /> Outro
         </td>
       </tr>
       <tr>

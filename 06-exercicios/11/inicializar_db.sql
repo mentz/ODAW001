@@ -13,12 +13,11 @@ CREATE TABLE academicos (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(60) NOT NULL UNIQUE,
     cpf CHAR(11) NOT NULL UNIQUE,
-    email VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(40) NOT NULL UNIQUE,
     telefone CHAR(11) NOT NULL,
     estadonatal CHAR(2) NOT NULL,
-    vinculo CHAR(5) NOT NULL,
     sexo CHAR(1) NOT NULL,
-    transporte BIT(4) NOT NULL
+    vinculo CHAR(5) NOT NULL
 );
 
 -- Criar tabela com estados

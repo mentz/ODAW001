@@ -10,21 +10,21 @@
 </head>
 
 <body>
-    <?php
-    $db = new mysqli('localhost', 'odawphp', 'z8mT6^FqH3Cu*4baq*kz', 'odawphp');
+  <?php
+  $db = new mysqli('localhost', 'odawphp', 'z8mT6^FqH3Cu*4baq*kz', 'odawphp');
 
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $cpf = $_POST["cpf"];
-    $telefone = $_POST["telefone"];
-    $aluno = $_POST["aluno"];
-    $professor = $_POST["professor"];
+  $nome = $_POST["nome"];
+  $email = $_POST["email"];
+  $cpf = $_POST["cpf"];
+  $telefone = $_POST["telefone"];
+  $aluno = $_POST["aluno"];
+  $professor = $_POST["professor"];
 
-    $query = <<<EOT
+  $query = <<<EOT
     INSERT INTO alunos (nome, email, cpf, telefone, aluno, professor) VALUES
         ($nome, $email, $cpf, $telefone, $aluno, $professor);
     EOT;
-    ?>
+  ?>
 
 </body>
 

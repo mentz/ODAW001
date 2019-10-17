@@ -81,10 +81,10 @@
       </tr>
       <tr>
         <td>Sexo:</td>
+        <td>
         <?php
-        echo '<td>'
         if($pessoa['genero'] == 'f'){
-          echo '<input type="radio" name="genero" value="f" checked/> Feminino'
+          echo '<input type="radio" name="genero" value="f" checked/> Feminino';
         } else {
           echo '<input type="radio" name="genero" value="f"/> Feminino'
         }
@@ -100,9 +100,8 @@
         } else {
           echo '<input type="radio" name="genero" value="o"/> Outro'
         }
-        echo '</td>'
-
         ?>
+        </td>
       </tr>
       <tr>
         <td></td>

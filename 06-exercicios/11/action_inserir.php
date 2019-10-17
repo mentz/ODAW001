@@ -11,6 +11,7 @@
 
 <body>
   <?php
+<<<<<<< HEAD:06-exercicios/11/action_insert.php
   include("template_header.php");
  
   $chaves = "(";
@@ -35,6 +36,22 @@
     echo '<h1> Não foi inserido problema no banco de dados </h1>'
   }
 ?>
+=======
+  $db = new mysqli('localhost', 'odawphp', 'z8mT6^FqH3Cu*4baq*kz', 'odawphp');
+
+  $nome = $_POST["nome"];
+  $email = $_POST["email"];
+  $cpf = $_POST["cpf"];
+  $telefone = $_POST["telefone"];
+  $aluno = $_POST["aluno"];
+  $professor = $_POST["professor"];
+
+  $query = <<<EOT
+    INSERT INTO alunos (nome, email, cpf, telefone, aluno, professor) VALUES
+        ($nome, $email, $cpf, $telefone, $aluno, $professor);
+    EOT;
+  ?>
+>>>>>>> 2abcc482ae4e4d0ecc122ab6081c3f66201469cf:06-exercicios/11/action_inserir.php
 
 </body>
 

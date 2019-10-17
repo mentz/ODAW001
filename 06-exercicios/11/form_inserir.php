@@ -32,7 +32,7 @@
   include("template_header.php");
   ?>
 
-  <form action="/action_insert.php">
+  <form action="action_inserir.php" method="POST">
     <table>
       <tr>
         <td>Nome:</td>

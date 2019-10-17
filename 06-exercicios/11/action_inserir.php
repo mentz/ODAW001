@@ -11,47 +11,39 @@
 
 <body>
   <?php
-<<<<<<< HEAD:06-exercicios/11/action_insert.php
   include("template_header.php");
- 
-  $chaves = "(";
-  $valores = "(";
-  foreach($_POST as $chave_davez => $valor_davez){
-    if($key != "send"){
-      $chaves = $chaves . $chave_davez . ",";
-      $valores = $valores . $valor_davez . ",";
-    }
-  }
-  $chaves = substr($chaves, 0, -1);
-  $chaves = $chaves . ");";
+  ?>
 
-  $valores = substr($valores, 0, -1);
-  $valores = $valores . ");";
-
-  $query_insert = "INSERT INTO alunos "  . $chaves . " VALUES " . $valores ;
-  $status = mysql_query($query_insert);
-  if($status){
-    echo '<h1> Inserido com sucesso </h1>'
-  } else {
-    echo '<h1> Não foi inserido problema no banco de dados </h1>'
-  }
-?>
-=======
+  <?php
   $db = new mysqli('localhost', 'odawphp', 'z8mT6^FqH3Cu*4baq*kz', 'odawphp');
 
   $nome = $_POST["nome"];
   $email = $_POST["email"];
-  $cpf = $_POST["cpf"];
   $telefone = $_POST["telefone"];
-  $aluno = $_POST["aluno"];
-  $professor = $_POST["professor"];
+  $cpf = $_POST["cpf"];
+  $datanascimento = $_POST["datanascimento"];
+  $estadonatal = $_POST["estadonatal"];
+  $vinculo = $_POST["vinculo"];
+  $sexo = $_POST["sexo"];
+  $tt1 = $_POST["transporte1"];
+  $tt2 = $_POST["transporte2"];
+  $tt3 = $_POST["transporte3"];
+  $tt4 = $_POST["transporte4"];
 
-  $query = <<<EOT
-    INSERT INTO alunos (nome, email, cpf, telefone, aluno, professor) VALUES
-        ($nome, $email, $cpf, $telefone, $aluno, $professor);
-    EOT;
+  $transporte = sprintf("0b%d%d%d%d", $tt1, $tt2, $tt3, $tt4);
+
+  $chaves = "nome, cpf, email, telefone, estadonatal, vinculo, sexo, transporte";
+  $valores = "$nome, $email, $telefone, $cpf, $datanascimento, $estadonatal, $vinculo, $sexo, $transporte";
+
+  $query_insert = "INSERT INTO alunos ($chaves) VALUES ($valores);";
+  var_dump($query_insert);
+  // $status = $db->query($query_insert);
+  // if ($status) {
+  //   echo '<h1> Inserido com sucesso </h1>';
+  // } else {
+  //   echo '<h1> Não foi inserido, problema no banco de dados </h1>';
+  // }
   ?>
->>>>>>> 2abcc482ae4e4d0ecc122ab6081c3f66201469cf:06-exercicios/11/action_inserir.php
 
 </body>
 

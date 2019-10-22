@@ -16,10 +16,15 @@ CREATE TABLE academicos (
     email VARCHAR(50) NOT NULL UNIQUE,
     telefone CHAR(11) NOT NULL,
     estadonatal CHAR(2) NOT NULL,
+    datanascimento DATE NOT NULL,
     vinculo CHAR(5) NOT NULL,
     sexo CHAR(1) NOT NULL,
     transporte BIT(4) NOT NULL
 );
+
+-- Inserir um elemento de exemplo
+INSERT INTO academicos (nome, cpf, email, telefone, estadonatal, datanascimento, vinculo, sexo, transporte)
+    VALUES ("Lucas Lotter Montz", "01234567890", "lucas@montz.com", "47901234567", "RS", "1997-08-22", "agrad", "M", 0b0001);
 
 -- Criar tabela com estados
 CREATE TABLE estados (

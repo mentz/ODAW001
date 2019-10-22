@@ -1,6 +1,7 @@
 <?php
 include("template_header.php");
 ?>
+
 <h1>Alterar cadastro existente</h1>
 <form action="action_alterar.php" method="POST">
   <?php

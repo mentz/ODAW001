@@ -38,6 +38,17 @@ div#failure {
   width: 600px;
 }
 
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 4px;
+}
+
 table {
   margin: 0 auto;
 }

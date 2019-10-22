@@ -2,6 +2,7 @@
 include("template_header.php");
 ?>
 
+<h1>Incluir cadastro de acadêmico</h1>
 <form action="action_inserir.php" method="POST">
   <table>
     <tr>

@@ -8,6 +8,8 @@ services:
         working_dir: /root/app/
         #command: npm run dev > /root/logs/frontend.log
         command: npm run start
+        environment:
+            API_PORT: 41550
         depends_on:
             - api
         ports:
@@ -29,8 +31,6 @@ services:
             API_PORT: 41550
         depends_on:
             - database
-        ports:
-            - 41550:41550
         volumes:
             - ./logs/:/root/logs
             - ./backend/:/root/app
@@ -45,8 +45,8 @@ services:
             POSTGRES_USER: odaw
             POSTGRES_PASSWORD: BatidaDe4Banana
             PGDATA: /var/lib/postgresql/data/pgdata
-        volumes:
-            - ./db/:/var/lib/postgresql/data/pgdata
+        #volumes:
+        #    - ./db/:/var/lib/postgresql/data/pgdata
         networks:
             - backend
 

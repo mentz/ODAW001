@@ -1,0 +1,11 @@
+{
+  "name": "atarefado_api",
+  "version": "1.0.0",
+  "description": "API Restful para aplicação atarefado",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon src/index.js"
+  },
+  "author": "Arthur, Lucas",
+  "license": "ISC"
+}

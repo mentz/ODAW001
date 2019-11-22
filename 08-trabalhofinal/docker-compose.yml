@@ -3,56 +3,39 @@ version: "3.6"
 
 # services declaration.
 services:
-    webserver:
-        image: node:alpine
-        working_dir: /root/app/
-        #command: npm run dev > /root/logs/frontend.log
-        command: npm run start
-        environment:
-            API_PORT: 41550
-        depends_on:
-            - api
-        ports:
-            - 5000:5000
-        volumes: 
-            - ./logs/:/root/logs
-            - ./frontend/:/root/app
-        networks:
-            - frontend
+  app:
+    image: node:alpine
+    working_dir: /root/app/
+    #command: npm run dev > /root/logs/backend.log
+    command: npm run dev
+    environment:
+      DB_ADDR: database
+      DB_PORT: 5432
+      DB_USER: odaw
+      DB_PASS: BatidaDe4Banana
+      PORT: 5000
+    ports:
+      - 5000:5000
+    depends_on:
+      - database
+    volumes:
+      - ./logs/:/root/logs
+      - ./app/:/root/app
+    networks:
+      - appnetwork
 
-    api:
-        image: node:alpine
-        working_dir: /root/app/
-        #command: npm run dev > /root/logs/backend.log
-        command: npm run dev
-        environment:
-            DB_USER: odaw
-            DB_PASS: BatidaDe4Banana
-            API_PORT: 41550
-        depends_on:
-            - database
-        volumes:
-            - ./logs/:/root/logs
-            - ./backend/:/root/app
-        networks:
-            - backend
-            - frontend
-
-    database:
-        image: postgres:alpine
-        restart: always
-        environment:
-            POSTGRES_USER: odaw
-            POSTGRES_PASSWORD: BatidaDe4Banana
-            PGDATA: /var/lib/postgresql/data/pgdata
-        #volumes:
-        #    - ./db/:/var/lib/postgresql/data/pgdata
-        networks:
-            - backend
+  database:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_USER: odaw
+      POSTGRES_PASSWORD: BatidaDe4Banana
+      PGDATA: /var/lib/postgresql/data/pgdata
+    #volumes:
+    #  - ./db/:/var/lib/postgresql/data/pgdata
+    networks:
+      - appnetwork
 
 networks:
-    frontend:
-        driver: bridge
-    backend:
-        driver: bridge
-
+  appnetwork:
+    driver: bridge

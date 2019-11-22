@@ -1,0 +1,24 @@
+{
+  "name": "atarefado",
+  "version": "1.0.0",
+  "description": "Aplicação Atarefado, implementação monolítica",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "author": "Arthur, Lucas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "formidable": "^1.2.1",
+    "pg": "^7.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.0",
+    "standard": "^14.3.1"
+  }
+}

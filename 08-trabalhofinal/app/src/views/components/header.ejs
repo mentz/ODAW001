@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
     <a class="navbar-brand" href="#">Atarefado</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -6,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <% if (title == 'Tarefas') { %>
+        <!-- <% if (title == 'Tarefas') { %>
         <li class="nav-item active">
         <% } else { %>
         <li class="nav-item">
@@ -16,8 +17,8 @@
             <span class="sr-only"> (current)</span>
             <% } %>
           </a>
-        </li>
-        <% if (title == 'Todas') { %>
+        </li> -->
+        <!-- <% if (title == 'Todas') { %>
         <li class="nav-item active">
         <% } else { %>
         <li class="nav-item">
@@ -26,18 +27,18 @@
               <% if (title == 'Todas') { %>
               <span class="sr-only"> (current)</span>
               <% } %></a></a>
-        </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
-          </div>
         </li> -->
       </ul>
-      <!-- <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
+
+      <span class="dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= userData.nome || 'ERROR: No username' %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId">
+          <a class="dropdown-item" href="#">Meu Perfil</a>
+          <a class="dropdown-item" href="/logout">Sair</a>
+        </div>
+      </span>
     </div>
   </nav>
+</div>

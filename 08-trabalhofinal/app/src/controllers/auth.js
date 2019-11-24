@@ -3,10 +3,14 @@ module.exports = {
 }
 
 // Trocar isso aqui por acesso ao DB
-function login(username, password, callback) {
-  if (username == 'lucas' && password == 'mentz') {
-    callback(null, true)
+function login (username, password, callback) {
+  if (username === 'lucas' && password === 'mentz') {
+    var userData = {
+      nome: 'Lucas Litter Mentz',
+      email: 'lucas@mentz.dev'
+    }
+    callback(null, true, userData)
   } else {
-    callback(null, false);
+    callback(null, false)
   }
 }

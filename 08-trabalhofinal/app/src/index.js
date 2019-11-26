@@ -60,7 +60,6 @@ server.post('/login', function (req, res, next) {
         res.redirect('/home')
       } else {
         req.session.loggedOn = false
-        req.session.userData = userData
         res.render('login', { error: 'Usuário ou senha incorretas.' })
       }
     }

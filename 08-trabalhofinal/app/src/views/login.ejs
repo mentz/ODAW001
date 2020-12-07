@@ -42,7 +42,7 @@
           </div>
           <div class="card">
             <div class="card-body">
-                <% if (typeof error == 'object' && error) { %>
+                <% if (typeof error != 'undefined' && error) { %>
                   <div class="alert alert-danger alert-dismissible fade show" role="alert">
                       <strong>Falha na autenticação!</strong> Usuário ou senha incorretos.
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -53,6 +53,7 @@
               <form action="/login" method="post">
                 <div class="form-group">
                   <label for="username">Endereço de e-mail</label>
+                  
                   <input type="text" name="username" id="username" class="form-control" aria-describedby="helpId">
                   <small id="helpId" class="text-muted">Endereço usado para cadastro</small>
                 </div>

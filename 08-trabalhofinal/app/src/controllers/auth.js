@@ -4,7 +4,7 @@ module.exports = {
 
 // Trocar isso aqui por acesso ao DB
 function login (username, password, callback) {
-  if (username === 'lucas' && password === 'mentz') {
+  if (username === 'lucas@mentz.dev' && password === 'mentz') {
     var userData = {
       nome: 'Lucas Litter Mentz',
       email: 'lucas@mentz.dev'
